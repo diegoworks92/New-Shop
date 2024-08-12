@@ -1,7 +1,7 @@
 import { Roboto } from "next/font/google";
 import { Header } from "./components/shared/Header";
 import { Footer } from "./components/shared/Footer";
-import "app/sass/globals.sass";
+import "../sass/globals.sass";
 
 const roboto = Roboto({
   weight: ["100", "300", "500", "700"],
