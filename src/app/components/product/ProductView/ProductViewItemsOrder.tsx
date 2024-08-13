@@ -24,11 +24,9 @@ export const ProductViewItemsOrder = ({
       price: product.price,
       quantity: counter,
       id: product.id,
+      image: product.image,
+      merchandiseId: product.gql_id,
     });
-  };
-
-  const handleSubmit = (event: SyntheticEvent) => {
-    event.preventDefault();
   };
 
   const handleSubtract = (event: SyntheticEvent) => {
@@ -51,14 +49,10 @@ export const ProductViewItemsOrder = ({
         <button onClick={handleAdd}>+</button>
       </div>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleAddToCart}
         className={styles.ProductViewItemsOrder__form}
       >
-        <button
-          className={styles.ProductViewItemsOrder__submit}
-          type="submit"
-          onClick={handleAddToCart}
-        >
+        <button className={styles.ProductViewItemsOrder__submit} type="submit">
           <FaCartShopping />
           <span>Add to cart</span>
         </button>
