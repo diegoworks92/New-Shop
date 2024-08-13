@@ -1,19 +1,12 @@
 import Image from "next/image";
 import { ProductViewItemsOrder } from "./ProductViewItemsOrder";
 import { SanitizeHTML } from "app/components/shared/SanitizeHTML";
-/* import { useRouter } from "next/navigation"; */
 import styles from "./ProductView.module.sass";
 interface ProductViewProps {
   product: ProductType;
 }
 
 export const ProductView = ({ product }: ProductViewProps) => {
-  /*   const router = useRouter();
-
-  if (!product) {
-    router.push("/");
-  } */
-
   return (
     <main className={styles.ProductView}>
       <section className={styles.ProductView__images}>
@@ -33,7 +26,10 @@ export const ProductView = ({ product }: ProductViewProps) => {
         <span className={styles.ProductView__info__price}>
           $ {product.price}
         </span>
-        <ProductViewItemsOrder maxQuantity={product.quantity} />
+        <ProductViewItemsOrder
+          maxQuantity={product.quantity}
+          product={product}
+        />
       </section>
     </main>
   );
