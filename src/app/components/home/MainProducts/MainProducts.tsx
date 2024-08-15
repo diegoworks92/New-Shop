@@ -1,40 +1,6 @@
-/* import Image from "next/image";
-import styles from "./MainProducts.module.sass";
-import { getProducts } from "../../../../services/shopify";
-
-
-export const MainProducts = async () => {
-  const products = await getProducts();
-
-  return (
-    <section className={styles.MainProducts}>
-      <h3>✨ New products released!</h3>
-      <div className={styles.MainProducts__grid}>
-        {products?.map((product) => {
-          const imageSrc = product.images[0].src;
-          return (
-            <article key={product.id}>
-              <p>{product.title}</p>
-              <Image
-                src={imageSrc}
-                layout="responsive"
-                width={400}
-                height={400}
-                alt={product.title}
-                loading="eager"
-              />
-            </article>
-          );
-        })}
-      </div>
-    </section>
-  );
-};
- */
-
+import { getMainProducts } from "../../../../services/shopify/products";
 import Image from "next/image";
 import styles from "./MainProducts.module.sass";
-import { getMainProducts } from "../../../../services/shopify/products";
 
 export const MainProducts = async () => {
   const products = await getMainProducts();
@@ -43,22 +9,30 @@ export const MainProducts = async () => {
     <section className={styles.MainProducts}>
       <h3>✨ New products released!</h3>
       <div className={styles.MainProducts__grid}>
-        {products?.map((product) => {
-          const imageSrc = product.images[0].src;
-          return (
-            <article key={product.id}>
-              <p>{product.title}</p>
-              <Image
-                src={imageSrc}
-                layout="responsive"
-                width={400}
-                height={400}
-                alt={product.title}
-                loading="eager"
-              />
-            </article>
-          );
-        })}
+        {products?.map(
+          (product: {
+            id: string;
+            title: string;
+            images: {
+              src: string;
+            }[];
+          }) => {
+            const imageSrc = product.images[0].src;
+            return (
+              <article key={product.id}>
+                <p>{product.title}</p>
+                <Image
+                  src={imageSrc}
+                  layout="responsive"
+                  width={400}
+                  height={400}
+                  alt={product.title}
+                  loading="eager"
+                />
+              </article>
+            );
+          }
+        )}
       </div>
     </section>
   );

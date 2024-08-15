@@ -23,3 +23,5 @@ type CartItem = {
   image: string;
   merchandiseId: string;
 }
+
+

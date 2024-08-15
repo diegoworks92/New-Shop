@@ -1,7 +1,9 @@
-/* import { getCollections } from "app/services/shopify/collections" */
-import { getCollections } from "app/../services/shopify/collections";
 import Link from "next/link";
+import { ChatLink } from "app/components/Store/ChatLink";
+import { getCollections } from "app/../services/shopify/collections";
 import styles from "./StoreLayout.module.sass";
+
+export const runtime = "edge";
 
 export default async function Layout({
   children,
@@ -25,6 +27,7 @@ export default async function Layout({
             </Link>
           ))}
         </ul>
+        <ChatLink />
       </nav>
       {children}
     </main>
