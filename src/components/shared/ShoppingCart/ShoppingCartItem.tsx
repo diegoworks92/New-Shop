@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { FaRegTrashCan } from "react-icons/fa6";
-import { useShoppingCart } from "../../../../hooks/useShoppingCart";
+import { useShoppingCart } from "../../../hooks/useShoppingCart";
 import styles from "./ShoppingCartItem.module.sass";
 
 interface ShoppingCartItemProps {

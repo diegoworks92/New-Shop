@@ -1,31 +1,7 @@
-/* 
-  import { env } from "../../config/env";
-  import { shopifyUrls } from "./urls";
-  
-  export const getProducts = async () => {
-    try {
-      const response = await fetch(shopifyUrls.products.all, {
-        headers: new Headers({
-          'X-Shopify-Access-Token': env.SHOPIFY_API_KEY // Aquí usas el token de acceso
-        })
-      });
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-  
-      const { products } = await response.json();
-      return products;
-    } catch (error) {
-      console.log(error); // Verifica cualquier error que ocurra
-    }
-  };
-  
- */
   import { env } from "../../config/env";
   import { shopifyUrls } from "./urls"
   
-  export const getProducts = async (id?: string): Promise<ProductType[]> => {
+  export const getProducts = async (id?: string) => {
     try {
       const apiUrl = id ? `${shopifyUrls.products.all}?ids=${id}` : shopifyUrls.products.all
       const response = await fetch(apiUrl, {

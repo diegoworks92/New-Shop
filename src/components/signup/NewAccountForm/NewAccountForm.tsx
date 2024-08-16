@@ -1,13 +1,16 @@
 "use client";
 import { useState } from "react";
 import styles from "./NewAccountForm.module.sass";
-import { handleCreateUser } from "../../../../actions";
+import { handleCreateUser } from "../../../actions";
 
 export const NewAccountForm = () => {
   const [errors, setErrors] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: {
+    target: any;
+    preventDefault: () => void;
+  }) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     await handleCreateUser(formData);
@@ -33,9 +36,8 @@ export const NewAccountForm = () => {
           type="text"
           name="email"
           placeholder="email"
-          /* pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" */
-          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
-          disabled={loading}
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          /* pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" */ disabled={loading}
         />
         <input
           type="text"

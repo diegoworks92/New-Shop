@@ -1,4 +1,4 @@
-import { ProductsWrapper } from "app/components/Store/ProductsWrapper";
+import { ProductsWrapper } from "../../../components/Store/ProductsWrapper";
 import { getProducts } from "../../../services/shopify/products";
 import {
   getCollectionProducts,
@@ -19,14 +19,12 @@ export default async function Category(props: CategoryProps) {
 
   if (categories?.length > 0) {
     const selectedCollectionId = collections.find(
-      (collection) => collection.handle === categories[0]
+      (collection: any) => collection.handle === categories[0]
     ).id;
     products = await getCollectionProducts(selectedCollectionId);
   } else {
     products = await getProducts();
   }
-
-  console.log("products", products);
 
   return <ProductsWrapper products={products} />;
 }

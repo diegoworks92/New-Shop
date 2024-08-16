@@ -1,4 +1,4 @@
-import { MainProducts } from "app/components/home/MainProducts";
+import { MainProducts } from "../../components/home/MainProducts";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

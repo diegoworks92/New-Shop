@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import { useShoppingCart } from "../../../../hooks/useShoppingCart";
+import { useShoppingCart } from "../../../hooks/useShoppingCart";
 import { ShoppingCartItem } from "./ShoppingCartItem";
-import { handleCreateCart } from "../../../../actions";
+import { handleCreateCart } from "../../../actions";
 import styles from "./ShoppingCart.module.sass";
 
 export default function ShoppingCart() {

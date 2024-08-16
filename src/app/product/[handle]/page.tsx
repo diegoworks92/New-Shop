@@ -1,4 +1,4 @@
-import { ProductView } from "app/components/product/ProductView";
+import { ProductView } from "../../../components/product/ProductView";
 import { getProducts } from "../../../services/shopify/products";
 import { redirect } from "next/navigation";
 

@@ -18,8 +18,8 @@ export const Description = () => {
     "Description__button--border": hasBorder,
   });
 
-  console.log(buttonStyles);
-
+  /*   console.log(buttonStyles);
+   */
   return (
     <section className={styles.Description}>
       <button onClick={handleClick} className={buttonStyles}>
@@ -30,6 +30,7 @@ export const Description = () => {
             fill
             placeholder="blur"
             blurDataURL={PLACEHOLDER_IMAGE}
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </button>

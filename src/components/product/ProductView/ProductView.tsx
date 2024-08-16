@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ProductViewItemsOrder } from "./ProductViewItemsOrder";
-import { SanitizeHTML } from "app/components/shared/SanitizeHTML";
+import { SanitizeHTML } from "../../shared/SanitizeHTML";
 import styles from "./ProductView.module.sass";
 interface ProductViewProps {
   product: ProductType;
