@@ -46,7 +46,9 @@ export const Description = () => {
             ].map((src, index) => (
               <video
                 key={index}
-                ref={(el) => (videoRefs.current[index] = el!)}
+                ref={(el) => {
+                  videoRefs.current[index] = el!;
+                }}
                 width="600"
                 height="400"
                 muted
@@ -66,51 +68,6 @@ export const Description = () => {
       <div className={styles.Description__text}>
         <h2>Bring the future today</h2>
         <p>
-          Future World: Your Gateway to Tomorrow's Tech! Dive into a world of
-          cutting-edge gadgets and gear. Stay ahead of the curve and redefine
-          your digital lifestyle with us.
-        </p>
-      </div>
-    </section>
-  );
-};
-
-/* "use client";
-
-import classNames from "classnames/bind";
-import { useState } from "react";
-import styles from "./Description.module.sass";
-
-
-export const Description = () => {
-  const [hasBorder, setBorder] = useState(false);
-
-  const handleClick = () => setBorder(!hasBorder);
-
-  const cx = classNames.bind(styles);
-
-  const buttonStyles = cx("Description__button", {
-    "Description__button--border": hasBorder,
-  });
-
-  return (
-    <section className={styles.Description}>
-      <button onClick={handleClick} className={buttonStyles}>
-        <div className={styles.Description__imageContainer}>
-       
-          <video width="600" controls>
-            <source
-              src="https://videos.pexels.com/video-files/6498514/6498514-uhd_2560_1440_25fps.mp4"
-              type="video/mp4"
-              
-            />
-            Tu navegador no soporta la etiqueta de video.
-          </video>
-        </div>
-      </button>
-      <div className={styles.Description__text}>
-        <h2>Bring the future today</h2>
-        <p>
           Future World: Your Gateway to Tomorrow&apos;s Tech! Dive into a world
           of cutting-edge gadgets and gear. Stay ahead of the curve and redefine
           your digital lifestyle with us.
@@ -119,4 +76,3 @@ export const Description = () => {
     </section>
   );
 };
- */

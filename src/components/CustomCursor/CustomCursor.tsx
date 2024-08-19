@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./style.css";
 
 interface Position {
@@ -23,7 +23,7 @@ const CustomCursor: React.FC = () => {
     );
   };
 
-  const animateFollower = () => {
+  const animateFollower = useCallback(() => {
     if (followerRef.current) {
       const follower = followerRef.current;
       const dx = position.x - lastPosition.current.x;
@@ -34,7 +34,7 @@ const CustomCursor: React.FC = () => {
       follower.style.top = `${lastPosition.current.y}px`;
     }
     requestRef.current = requestAnimationFrame(animateFollower);
-  };
+  }, [position]);
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
@@ -45,7 +45,7 @@ const CustomCursor: React.FC = () => {
         cancelAnimationFrame(requestRef.current);
       }
     };
-  }, [position]);
+  }, [animateFollower]);
 
   const cursorStyle = isPointer ? { opacity: 0.5 } : {};
 
