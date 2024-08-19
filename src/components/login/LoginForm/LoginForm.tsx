@@ -21,8 +21,8 @@ export const LoginForm = () => {
           type="text"
           name="email"
           placeholder="email"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-          /* pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" */
+          /* pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" */
+          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
         />
         <input type="password" name="password" placeholder="password" />
         <input type="submit" name="submit" value="Login" />

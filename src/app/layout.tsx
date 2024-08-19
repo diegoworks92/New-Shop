@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import { Header } from "../components/shared/Header";
 import { Footer } from "../components/shared/Footer";
+import CustomCursor from "../components/CustomCursor/CustomCursor";
 import "../sass/globals.sass";
 
 const roboto = Roboto({
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Header />
+        <CustomCursor />
         {children}
         <Footer />
       </body>

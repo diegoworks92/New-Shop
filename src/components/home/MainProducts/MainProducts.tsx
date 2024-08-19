@@ -1,13 +1,13 @@
-import { getMainProducts } from "../../../services/shopify/products";
+/* import { getMainProducts } from "../../../services/shopify/products";
 import Image from "next/image";
 import styles from "./MainProducts.module.sass";
-/* 
+
 export const MainProducts = async () => {
   const products = await getMainProducts();
 
   return (
     <section className={styles.MainProducts}>
-      <h3>✨ New products released!</h3>
+      <h3 className={styles.MainProducts__title}>✨ New products released!</h3>
       <div className={styles.MainProducts__grid}>
         {products?.map(
           (product: {
@@ -21,14 +21,17 @@ export const MainProducts = async () => {
             return (
               <article key={product.id}>
                 <p>{product.title}</p>
-                <Image
-                  src={imageSrc}
-                  layout="responsive"
-                  width={400}
-                  height={400}
-                  alt={product.title}
-                  loading="eager"
-                />
+                <div className={styles.MainProducts__imageWrapper}>
+                  <Image
+                    src={imageSrc}
+                    fill
+                    alt={product.title}
+                    loading="eager"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                    className={styles.MainProducts__image}
+                  />
+                </div>
               </article>
             );
           }
@@ -39,12 +42,16 @@ export const MainProducts = async () => {
 };
  */
 
+import { getMainProducts } from "../../../services/shopify/products";
+import Image from "next/image";
+import styles from "./MainProducts.module.sass";
+
 export const MainProducts = async () => {
   const products = await getMainProducts();
 
   return (
     <section className={styles.MainProducts}>
-      <h3>✨ New products released!</h3>
+      <h3 className={styles.MainProducts__title}>✨ New products released!</h3>
       <div className={styles.MainProducts__grid}>
         {products?.map(
           (product: {
@@ -58,14 +65,17 @@ export const MainProducts = async () => {
             return (
               <article key={product.id}>
                 <p>{product.title}</p>
-                <Image
-                  src={imageSrc}
-                  fill
-                  alt={product.title}
-                  loading="eager"
-                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: "cover" }}
-                />
+                <div className={styles.MainProducts__imageWrapper}>
+                  <Image
+                    src={imageSrc}
+                    fill
+                    alt={product.title}
+                    loading="eager"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                    className={styles.MainProducts__image}
+                  />
+                </div>
               </article>
             );
           }

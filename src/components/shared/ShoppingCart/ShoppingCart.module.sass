@@ -10,6 +10,9 @@
             width: 1.25rem
             height: 1.25rem
             fill: $text-color
+            transition: color 0.3s ease
+            &:hover
+                fill: $hover-color
     &__counter
         display: flex
         align-items: center
@@ -48,6 +51,8 @@
         font-weight: bold
         cursor: pointer
         margin-top: 1rem
+        &:hover
+            background: $hover-color
         &:disabled
             background: $color-primary
             color: $text-color

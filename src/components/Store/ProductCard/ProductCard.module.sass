@@ -21,3 +21,16 @@
         text-decoration: none
         color: white
         cursor: pointer
+    &__imageWrapper
+        width: 320px
+        height: 320px
+        overflow: hidden
+        border-radius: 10px // Bordes ligeramente redondeados
+        transition: box-shadow 0.5s ease-in-out // Transición para el borde difuminado
+    &__image
+        transition: transform 0.5s ease-in-out // Transición más rápida para el efecto de acercamiento
+        object-fit: cover // Mantiene el tamaño de la imagen
+    &:hover &__imageWrapper
+        box-shadow: 0 0 15px rgba(245, 0, 204, 0.5) // Borde difuminado al pasar el ratón
+    &:hover &__image
+        transform: scale(1.1) // Efecto de acercamiento sin cambiar el tamaño del contenedor
