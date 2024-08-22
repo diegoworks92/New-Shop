@@ -3,6 +3,7 @@
     grid-template-columns: auto 1fr
     grid-gap: 1.25rem
     margin-top: 2rem
+
     &__itemsCount
         display: flex
         column-gap: 0.5rem
@@ -11,6 +12,7 @@
         border-radius: 0.5rem
         background: $border-color
         width: fit-content
+
         & > button
             display: flex
             justify-content: center
@@ -24,6 +26,8 @@
             border: none
             padding: 0 2rem
             cursor: pointer
+            &:hover
+                color: $purple-color
         & > p
             margin: 0px
             font-size: 1.2rem
@@ -48,3 +52,25 @@
         cursor: pointer
         color: white
         margin-top: auto
+        &:hover
+            outline: 0
+            background-image: linear-gradient(135deg, $magenta-color 40%, $purple-color)
+            transform: scale(1.02)
+
+        &:active
+            outline: 0
+            transform: scale(0.9)
+
+            span
+                transform: scale(.9)
+                opacity: .75
+
+        span
+            transition: all 200ms
+
+        @media screen and (max-width: 991px)
+            font-size: 15px
+            height: 50px
+
+            span
+                line-height: 50px

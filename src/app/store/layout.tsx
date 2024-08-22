@@ -16,13 +16,14 @@ export default async function Layout({
       <nav>
         <ul className={styles.StoreLayout__list}>
           {collections?.map((collection: any) => (
-            <Link
-              key={collection.id}
-              href={"/store/" + collection.handle}
-              className={styles.StoreLayout__chip}
-            >
-              {collection.title}
-            </Link>
+            <li key={collection.id} className={styles.StoreLayout__item}>
+              <Link
+                href={"/store/" + collection.handle}
+                className={styles.StoreLayout__chip}
+              >
+                {collection.title}
+              </Link>
+            </li>
           ))}
         </ul>
         <ChatLink />

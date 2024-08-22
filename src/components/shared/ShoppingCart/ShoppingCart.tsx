@@ -33,27 +33,29 @@ export default function ShoppingCart() {
   };
 
   return (
-    <div className={styles.ShoppingCart}>
+    <>
       {hasItems && (
-        <span className={styles.ShoppingCart__counter}>{cart.length}</span>
-      )}
-      <button className={styles.ShoppingCart__cart} onClick={handleOpen}>
-        <FaShoppingCart />
-      </button>
-      {isOpen && hasItems && (
-        <div className={styles.ShoppingCart__items}>
-          {cart.map((item) => (
-            <ShoppingCartItem key={item.id} item={item} />
-          ))}
-          <button
-            onClick={handleBuy}
-            className={styles.ShoppingCart__buyButton}
-            disabled={isBuying}
-          >
-            Buy
+        <div className={styles.ShoppingCart}>
+          <span className={styles.ShoppingCart__counter}>{cart.length}</span>
+          <button className={styles.ShoppingCart__cart} onClick={handleOpen}>
+            <FaShoppingCart />
           </button>
+          {isOpen && (
+            <div className={styles.ShoppingCart__items}>
+              {cart.map((item) => (
+                <ShoppingCartItem key={item.id} item={item} />
+              ))}
+              <button
+                onClick={handleBuy}
+                className={styles.ShoppingCart__buyButton}
+                disabled={isBuying}
+              >
+                Buy
+              </button>
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 }

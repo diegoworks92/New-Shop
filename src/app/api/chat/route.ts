@@ -38,7 +38,7 @@ export const runtime = 'edge';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    console.log('Request body:', body); // Depuración
+    console.log('Request body:', body);
     const { messages } = body;
     const question = messages[messages.length - 1].content;
 
@@ -47,11 +47,11 @@ export async function POST(req: NextRequest) {
       inputs: question,
     });
 
-    console.log('API response:', response); // Depuración
+    console.log('API response:', response); 
 
     return NextResponse.json({ answer: response.generated_text });
   } catch (error) {
-    console.error('Error:', error); // Depuración
+    console.error('Error:', error); 
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

@@ -1,7 +1,5 @@
 "use client";
 import { SyntheticEvent, useState } from "react";
-import { FaCartShopping } from "react-icons/fa6";
-/* import { useShoppingCart } from "app/hooks/useShoppingCart"; */
 import { useShoppingCart } from "../../../hooks/useShoppingCart";
 import styles from "./ProductViewItemsOrder.module.sass";
 
@@ -44,16 +42,25 @@ export const ProductViewItemsOrder = ({
   return (
     <div className={styles.ProductViewItemsOrder}>
       <div className={styles.ProductViewItemsOrder__itemsCount}>
-        <button onClick={handleSubtract}>-</button>
+        <button
+          onClick={handleSubtract}
+          className={styles.ProductViewItemsOrder__symbol}
+        >
+          -
+        </button>
         <p>{counter}</p>
-        <button onClick={handleAdd}>+</button>
+        <button
+          onClick={handleAdd}
+          className={styles.ProductViewItemsOrder__symbol}
+        >
+          +
+        </button>
       </div>
       <form
         onSubmit={handleAddToCart}
         className={styles.ProductViewItemsOrder__form}
       >
         <button className={styles.ProductViewItemsOrder__submit} type="submit">
-          <FaCartShopping />
           <span>Add to cart</span>
         </button>
       </form>

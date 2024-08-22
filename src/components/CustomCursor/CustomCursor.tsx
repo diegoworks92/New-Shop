@@ -14,13 +14,23 @@ const CustomCursor: React.FC = () => {
   const followerRef = useRef<HTMLDivElement>(null);
   const requestRef = useRef<number>();
   const lastPosition = useRef<Position>({ x: 0, y: 0 });
-
+  /* 
   const handleMouseMove = (e: MouseEvent) => {
     setPosition({ x: e.clientX, y: e.clientY });
     const target = e.target as HTMLElement;
     setIsPointer(
       window.getComputedStyle(target).getPropertyValue("cursor") === "pointer"
     );
+  };
+ */
+  const handleMouseMove = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target instanceof Element) {
+      setIsPointer(
+        window.getComputedStyle(target).getPropertyValue("cursor") === "pointer"
+      );
+    }
+    setPosition({ x: e.clientX, y: e.clientY });
   };
 
   const animateFollower = useCallback(() => {

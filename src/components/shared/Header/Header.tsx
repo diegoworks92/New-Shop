@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { validateAccessToken } from "../../../utils/auth/validateAccesToken";
-/* import { ShoppingCart } from "../ShoppingCart"; */
 import dynamic from "next/dynamic";
 import styles from "./Header.module.sass";
 
@@ -18,16 +17,18 @@ export const Header = async () => {
           <li>
             <Link href="/">Home</Link>
           </li>
-          <li>
-            <Link href="/store">Store</Link>
-          </li>
         </ul>
       </nav>
       <div className={styles.Header__user}>
         {customer?.firstName ? (
-          <Link href="/my-account">Hola! {customer.firstName}</Link>
+          <Link href="/my-account">Welcome {customer.firstName}</Link>
         ) : (
-          <Link href="/login">Login</Link>
+          <ul className={styles.Header__list}>
+            <li>
+              <Link href="/login">Login</Link>
+              <Link href="/signup">Sign up</Link>
+            </li>
+          </ul>
         )}
         <NoSSRShoppingCart />
       </div>

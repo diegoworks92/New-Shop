@@ -8,13 +8,11 @@ export default function NotFound() {
       <h1 className={styles.NotFound__title}>404</h1>
       <Image src="/images/404.png" alt="404" width={300} height={300} />
       <h2 className={styles.NotFound__subtitle}>
-        ¡Uy, parece que el enlace se escondió!
+        Oops, it looks like the link is hiding!
       </h2>
-      <p className={styles.NotFound__description}>
-        Pero nuestra tienda está abierta las 24/7
-      </p>
+      <p className={styles.NotFound__description}>But our store is open 24/7</p>
       <Link className={styles.NotFound__link} href="/store">
-        ¡Vamos de compras!
+        Let&apos;s go shopping!
       </Link>
     </main>
   );

@@ -1,49 +1,3 @@
-/* .MainProducts
- & > h3
- text-align: center
- font-size: 3rem
- &__grid
- display: grid
- width: 100%
- grid-template-columns: repeat(2, 1fr)
- grid-template-rows: 400px 400px
- gap: 1rem
- & > article
- position: relative
- z-index: 1
- min-height: 400px
- & > img
- position: relative
- width: 100%
- height: 100%
- & > p
- position: absolute
- top: 0
- right: 1.5rem
- z-index: 2
- font-size: 1.5rem
- font-weight: 700
- max-width: 300px
- text-align: right
- &__title
- font-family: 'Blanka', sans-serif
- &__imageWrapper
- width: 320px
- height: 320px
- overflow: hidden
- border-radius: 10px // Bordes ligeramente redondeados
- transition: box-shadow 0.5s ease-in-out // Transición para el borde difuminado
-
- &:hover
- box-shadow: 0 0 15px rgba(245, 0, 204, 0.5) // Borde difuminado al pasar el ratón
-
- .MainProducts__image
- transform: scale(1.1) // Efecto de acercamiento sin cambiar el tamaño del contenedor
-
- &__image
- transition: transform 0.5s ease-in-out // Transición más rápida para el efecto de acercamiento
- object-fit: cover // Mantiene el tamaño de la imagen
- */
 @font-face
     font-family: 'Blanka'
     src: url('/fonts/Blanka.otf') format('opentype')
@@ -87,7 +41,7 @@
     width: 320px
     height: 320px
     overflow: hidden
-    border-radius: 10px // Bordes ligeramente redondeados
+    border-radius: 10px
     transition: box-shadow 0.5s ease-in-out // Transición para el borde difuminado
 
     &:hover

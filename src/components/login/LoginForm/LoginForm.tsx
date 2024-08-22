@@ -1,7 +1,6 @@
 "use client";
 import { handleLogin } from "../../../actions/index";
 import styles from "./LoginForm.module.sass";
-import { SyntheticEvent } from "react";
 
 export const LoginForm = () => {
   const handleSubmit = async (event: {

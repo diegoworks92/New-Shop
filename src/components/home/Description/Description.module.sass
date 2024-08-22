@@ -1,51 +1,125 @@
-@font-face
-    font-family: 'Blanka'
-    src: url('/fonts/Blanka.otf') format('opentype')
-    font-weight: normal
-    font-style: normal
 .Description
-    display: grid
-    grid-template-columns: 1fr 1fr
-    column-gap: 2.25rem
+    display: flex
+    flex-direction: row
     max-width: 1000px
     margin: 6rem auto
     padding: 2rem 2.5rem
     border-radius: 1.375rem
-    &__button
-        background: transparent
-        border: none
-        cursor: pointer
-        &--border
-            img
-                border: 3px solid $main-contrast
-    &__imageContainer
-        position: relative
+
+    @media (max-width: 1200px) // Pantallas menores a LG
+        flex-direction: column
+
+    &__videoContainer
+        flex: 1
+        order: 1
         width: 500px
         height: 300px
-        & > img
+        margin-right: 3rem
+
+        @media (max-width: 1200px) // Pantallas menores a LG
+            width: 100%
+            height: auto
+            order: -1
+            margin-right: 0
+            margin-bottom: 2rem
+
+        &__videoWrapper
+            width: 600px
+            height: 400px
+            overflow: hidden
+            position: relative
+
+        video
+            width: 100%
+            height: 100%
             object-fit: cover
             border-radius: 1rem
-            box-shadow: 0 0 4rem rgba(255, 255, 255, 0.2)
+            box-shadow: 0 0 4rem rgba(143, 26, 220, 0.2)
+
     &__text
+        flex: 1
+        order: 2
+
+        @media (max-width: 1200px)
+            order: 1
+
         & > h2
             font-family: 'Blanka', sans-serif
             font-size: 2rem
             font-weight: 600
             color: $color-secondary
             margin: 0
-    & > p
-        font-size: 1.5rem
-        line-height: 1.75
-        color: $text-color
-    &__videoWrapper
-        width: 600px
-        height: 400px
-        overflow: hidden
+
+        & > p
+            font-size: 1.10rem
+            line-height: 1.75
+            color: $hover-color
+
+    &__buttonContainer
+        display: flex
+        justify-content: center
+        margin-top: 1.80rem
+
+    &__button
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        font-size: 2.25rem
+        width: auto
+        height: auto
+        padding: 0.6em 2em
+        border: none
+        outline: none
+        color: $magenta-color
+        background: #111
+        cursor: pointer
         position: relative
-    video
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        object-fit: cover
+        z-index: 0
+        border-radius: 10px
+        user-select: none
+        -webkit-user-select: none
+        touch-action: manipulation
+        text-decoration: none
+        font-family: 'Blanka', sans-serif
+
+        &:before
+            content: ""
+            background: linear-gradient(45deg, #ff00c8, #7a00ff, #ff00c8)
+            position: absolute
+            top: -2px
+            left: -2px
+            background-size: 400%
+            z-index: -1
+            filter: blur(5px)
+            -webkit-filter: blur(5px)
+            width: calc(100% + 4px)
+            height: calc(100% + 4px)
+            animation: glowing-button-85 20s linear infinite
+            transition: opacity 0.3s ease-in-out
+            border-radius: 10px
+
+        &:after
+            z-index: -1
+            content: ""
+            position: absolute
+            width: 100%
+            height: 100%
+            background: #07011e
+            left: 0
+            top: 0
+            border-radius: 10px
+
+        &:hover
+            color: $purple-color
+            font-size: 2.28rem
+
+        &:active
+            font-size: 2.20rem
+
+@keyframes glowing-button-85
+    0%
+        background-position: 0 0
+    50%
+        background-position: 400% 0
+    100%
+        background-position: 0 0
