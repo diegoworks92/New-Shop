@@ -1,11 +1,11 @@
-import { IBM_Plex_Mono } from "next/font/google";
+import { Sulphur_Point } from "next/font/google";
 import { Header } from "../components/shared/Header";
 import { Footer } from "../components/shared/Footer";
 import CustomCursor from "../components/CustomCursor/CustomCursor";
 import "../sass/globals.sass";
 
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["100", "300", "500", "700"],
+const sulphur_point = Sulphur_Point({
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={ibmPlexMono.className}>
+      <body className={sulphur_point.className}>
         <Header />
         <CustomCursor />
         {children}
