@@ -34,7 +34,7 @@
             height: 100%
             object-fit: cover
             border-radius: 1rem
-            box-shadow: 0 0 4rem rgba(143, 26, 220, 0.2)
+            box-shadow: 0 0 4rem $purple-color
 
     &__text
         flex: 1
@@ -84,7 +84,7 @@
 
         &:before
             content: ""
-            background: linear-gradient(45deg, #ff00c8, #7a00ff, #ff00c8)
+            background: linear-gradient(45deg, $magenta-color, $purple-color, $magenta-color)
             position: absolute
             top: -2px
             left: -2px
@@ -112,6 +112,7 @@
         &:hover
             color: $purple-color
             font-size: 2.28rem
+            transition: font-size 0.1s ease-linear
 
         &:active
             font-size: 2.20rem

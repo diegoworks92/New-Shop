@@ -56,9 +56,9 @@ export const Description = () => {
       <div className={styles.Description__text}>
         <h2>Bring the future today</h2>
         <p>
-          Future World: Your Gateway to Tomorrow&apos;s Tech! Dive into a world
-          of cutting-edge gadgets and gear. Stay ahead of the curve and redefine
-          your digital lifestyle with us.
+          Your Portal to Future Tech! Explore a vast realm of innovative gadgets
+          and cutting-edge gear. Stay ahead and transform your digital
+          experience with us.
         </p>
         <div className={styles.Description__buttonContainer}>
           <Link href="/store" className={styles.Description__button}>

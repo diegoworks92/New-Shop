@@ -12,24 +12,30 @@
     margin: 0 auto
     padding: 2rem
     justify-content: center
+
     & > li
       margin-right: 1rem
+
     &:last-child
       margin-right: 0
+
     & > li > a
       color: $text-color
       text-decoration: none
       font-size: 1.2rem
       font-weight: 400
       margin-right: 1rem
+
       &:hover
         color: $hover-color
+
   &__user
     margin-left: auto
     display: flex
     flex-flow: row nowrap
     align-items: center
     column-gap: 1rem
+
     & > a
       color: $text-color
       text-decoration: none
@@ -38,5 +44,45 @@
       display: flex
       align-items: center
       cursor: pointer
+
       &:hover
         color: $hover-color
+
+@media (max-width: 600px)
+  .Header__list
+    flex-flow: row wrap
+    column-gap: 1rem
+    padding: 1rem
+
+    & > li
+      margin-right: 0.5rem
+
+    & > li > a
+      font-size: 1rem
+      margin-right: 0.5rem
+
+  .Header__user
+    column-gap: 0.5rem
+
+    & > a
+      font-size: 1rem
+
+@media (max-width: 433px)
+  .Header__list
+    flex-flow: row wrap
+    column-gap: 0.5rem
+    padding: 0.5rem
+    margin-top: 0.25rem
+
+    & > li
+      margin-right: 0.25rem
+
+    & > li > a
+      font-size: 0.8rem
+      margin-right: 0.25rem
+
+  .Header__user
+    column-gap: 0.25rem
+
+    & > a
+      font-size: 0.8rem

@@ -38,3 +38,48 @@ export const Header = async () => {
     </header>
   );
 };
+
+/* 
+.Header
+display: flex
+flex-flow: row nowrap
+align-items: center
+padding: 0 2rem
+
+&__list
+  display: flex
+  flex-flow: row nowrap
+  list-style: none
+  column-gap: 2.5rem
+  margin: 0 auto
+  padding: 2rem
+  justify-content: center
+  & > li
+    margin-right: 1rem
+  &:last-child
+    margin-right: 0
+  & > li > a
+    color: $text-color
+    text-decoration: none
+    font-size: 1.2rem
+    font-weight: 400
+    margin-right: 1rem
+    &:hover
+      color: $hover-color
+&__user
+  margin-left: auto
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  column-gap: 1rem
+  & > a
+    color: $text-color
+    text-decoration: none
+    font-size: 1.2rem
+    font-weight: 400
+    display: flex
+    align-items: center
+    cursor: pointer
+    &:hover
+      color: $hover-color
+ */

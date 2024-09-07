@@ -62,7 +62,7 @@ export const NewAccountForm = () => {
         <input
           type="submit"
           name="submit"
-          value="Crear cuenta"
+          value="Create account"
           disabled={loading}
         />
       </form>

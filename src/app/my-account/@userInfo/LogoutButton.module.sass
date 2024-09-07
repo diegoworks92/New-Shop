@@ -1,10 +1,18 @@
+@font-face
+    font-family: 'Blanka'
+    src: url('/fonts/Blanka.otf') format('opentype')
+    font-weight: normal
+    font-style: normal
+
 .LogoutButton
+
     &__container
         display: flex
         justify-content: center
         align-items: center
         height: 20vh
     &__button
+        font-family: 'Blanka', sans-serif
         align-items: center
         background-image: linear-gradient(135deg, $purple-color 40%, $magenta-color)
         border: 0
@@ -14,7 +22,6 @@
         cursor: pointer
         display: flex
         flex-direction: column
-        font-family: "Codec cold", sans-serif
         font-size: 16px
         font-weight: 700
         height: 54px
