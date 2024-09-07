@@ -11,18 +11,11 @@ interface Position {
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState<boolean>(false);
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
   const followerRef = useRef<HTMLDivElement>(null);
   const requestRef = useRef<number>();
   const lastPosition = useRef<Position>({ x: 0, y: 0 });
-  /* 
-  const handleMouseMove = (e: MouseEvent) => {
-    setPosition({ x: e.clientX, y: e.clientY });
-    const target = e.target as HTMLElement;
-    setIsPointer(
-      window.getComputedStyle(target).getPropertyValue("cursor") === "pointer"
-    );
-  };
- */
+
   const handleMouseMove = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
     if (target instanceof Element) {
@@ -47,15 +40,27 @@ const CustomCursor: React.FC = () => {
   }, [position]);
 
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    requestRef.current = requestAnimationFrame(animateFollower);
+    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(isTouch);
+
+    if (!isTouch) {
+      window.addEventListener("mousemove", handleMouseMove);
+      requestRef.current = requestAnimationFrame(animateFollower);
+    }
+
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (requestRef.current) {
-        cancelAnimationFrame(requestRef.current);
+      if (!isTouch) {
+        window.removeEventListener("mousemove", handleMouseMove);
+        if (requestRef.current) {
+          cancelAnimationFrame(requestRef.current);
+        }
       }
     };
   }, [animateFollower]);
+
+  if (isTouchDevice) {
+    return null;
+  }
 
   const cursorStyle = isPointer ? { opacity: 0.5 } : {};
 
