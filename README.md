@@ -4,7 +4,7 @@ Creada con Next.js, esta tienda futurista ofrece una experiencia de compra en l�
 
 ## Página de la Tienda
 
-Puedes visitar la tienda en línea en el siguiente enlace: https://new-shop-brown.vercel.app/store
+Puedes visitar la tienda en línea en el siguiente enlace: https://next-horizon-store.vercel.app/
 
 ## Tecnologías Utilizadas
 
