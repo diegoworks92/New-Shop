@@ -26,6 +26,7 @@
 
     &__item
         margin-bottom: 2rem !important
+
     &__chip
         background: linear-gradient(109.6deg, $magenta-color 11.2%, $purple-color 91.1%)
         border-radius: 3rem
@@ -43,6 +44,13 @@
 
     &__title
         font-family: 'Blanka', sans-serif
+        margin-bottom: 100px
+
+        @media (max-width: 1000px)
+            margin-bottom: 80px
+
+        @media (max-width: 768px)
+            margin-bottom: 50px
 
     @media (max-width: 768px)
         text-align: center

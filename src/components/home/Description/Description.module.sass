@@ -51,6 +51,16 @@
             color: $color-secondary
             margin: 0
 
+            @media (max-width: 1200px)
+                margin-top: 50px
+
+            @media (max-width: 768px)
+                margin-top: 40px
+
+            @media (max-width: 576px)
+                margin-top: 24px
+                font-size: 20px
+
         & > p
             font-size: 1.10rem
             line-height: 1.75
@@ -60,6 +70,9 @@
         display: flex
         justify-content: center
         margin-top: 1.80rem
+
+        @media (max-width: 1200px)
+            margin-top: 3rem
 
     &__button
         display: inline-flex

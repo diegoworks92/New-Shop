@@ -35,7 +35,7 @@ export const NewAccountForm = () => {
         <input
           type="text"
           name="email"
-          placeholder="email"
+          placeholder="Email"
           /* pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" */
           pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
           disabled={loading}
@@ -43,26 +43,26 @@ export const NewAccountForm = () => {
         <input
           type="text"
           name="phone"
-          placeholder="phone number"
+          placeholder="Phone Number"
           pattern="^[0-9]*$"
           disabled={loading}
         />
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           disabled={loading}
         />
         <input
           type="password"
           name="password_confirmation"
-          placeholder="re-type password"
+          placeholder="Re-type Password"
           disabled={loading}
         />
         <input
           type="submit"
           name="submit"
-          value="Create account"
+          value="Create Account"
           disabled={loading}
         />
       </form>
